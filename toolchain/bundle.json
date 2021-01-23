@@ -1,0 +1,42 @@
+{
+    "constants": [
+        { "type": "integer", "value": 1 },
+        { "type": "integer", "value": 1000 },
+        { "type": "integer", "value": 2 },
+        { "type": "integer", "value": 400 }
+    ],
+    "code": {
+        "main": {
+            "stackSize": 0,
+            "instructions": [
+                { "op": "spawn", "fn": "task1", "args": 0 },
+                { "op": "spawn", "fn": "task2", "args": 0 },
+                { "op": "exit" }
+            ]
+        },
+        "task1": {
+            "stackSize": 2,
+            "instructions": [
+                { "op": "load-constant", "local": 0, "constant": 0 },
+                { "op": "load-constant", "local": 1, "constant": 1 },
+                { "op": "push", "local": 0 },
+                { "op": "call", "fn": "print", "args": 1 },
+                { "op": "push", "local": 1 },
+                { "op": "call", "fn": "delay", "args": 1 },
+                { "op": "jmp", "offset": 1 }
+            ]
+        },
+        "task2": {
+            "stackSize": 2,
+            "instructions": [
+                { "op": "load-constant", "local": 0, "constant": 2 },
+                { "op": "load-constant", "local": 1, "constant": 3 },
+                { "op": "push", "local": 0 },
+                { "op": "call", "fn": "print", "args": 1 },
+                { "op": "push", "local": 1 },
+                { "op": "call", "fn": "delay", "args": 1 },
+                { "op": "jmp", "offset": 1 }
+            ]
+        }
+    }
+}

@@ -1,0 +1,34 @@
+["source-file", [
+    
+    ["fn-def", "main", [], [
+        ["spawn", "task1", []],
+        ["spawn", "task2", []]
+    ]],
+
+    ["fn-def", "task1", [], [
+        ["var-decl", "x", ["integer", 1]],
+        ["var-decl", "y", ["integer", 1000]],
+        ["while", ["true"], [
+            ["call", ["ident", "print"], [
+                ["ident", "x"]
+            ]],
+            ["call", ["ident", "delay"], [
+                ["ident", "y"]
+            ]]
+        ]]
+    ]],
+
+    ["fn-def", "task1", [], [
+        ["var-decl", "x", ["integer", 2]],
+        ["var-decl", "y", ["integer", 400]],
+        ["while", ["true"], [
+            ["call", ["ident", "print"], [
+                ["ident", "x"]
+            ]],
+            ["call", ["ident", "delay"], [
+                ["ident", "y"]
+            ]]
+        ]]
+    ]]
+
+]]

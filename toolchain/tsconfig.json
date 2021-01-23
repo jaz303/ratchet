@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "lib":["ES2019"],
+        "module": "commonjs",
+        "outDir": "dist"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
