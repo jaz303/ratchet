@@ -3,7 +3,8 @@
         { "type": "integer", "value": 1 },
         { "type": "integer", "value": 1000 },
         { "type": "integer", "value": 2 },
-        { "type": "integer", "value": 400 }
+        { "type": "integer", "value": 400 },
+        { "type": "integer", "value": 3 }
     ],
     "code": {
         "main": {
@@ -11,6 +12,7 @@
             "instructions": [
                 { "op": "spawn", "fn": "task1", "args": 0 },
                 { "op": "spawn", "fn": "task2", "args": 0 },
+                { "op": "spawn", "fn": "task3", "args": 0 },
                 { "op": "exit" }
             ]
         },
@@ -35,6 +37,16 @@
                 { "op": "call", "fn": "print", "args": 1 },
                 { "op": "push", "local": 1 },
                 { "op": "call", "fn": "delay", "args": 1 },
+                { "op": "jmp", "offset": 1 }
+            ]
+        },
+        "task3": {
+            "stackSize": 1,
+            "instructions": [
+                { "op": "load-constant", "local": 0, "constant": 4 },
+                { "op": "push", "local": 0 },
+                { "op": "call", "fn": "print", "args": 1 },
+                { "op": "yield" },
                 { "op": "jmp", "offset": 1 }
             ]
         }

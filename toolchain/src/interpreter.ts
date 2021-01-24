@@ -1,5 +1,11 @@
 import {readFileSync} from 'fs';
 
+const start = Date.now();
+
+function dt() {
+    return (Date.now() - start) / 1000;
+}
+
 const fileName = process.argv[2];
 const bundle = JSON.parse(readFileSync(fileName, 'utf8'));
 
@@ -29,7 +35,7 @@ builtins.set('delay', (task: Task, args: Array<any>) => {
 });
 
 builtins.set('print', (task: Task, args: Array<any>) => {
-    console.log("print", args);
+    console.log("print", dt(), args);
 });
 
 function pause(task: Task) {
@@ -53,7 +59,8 @@ function run() {
                 if (task.running) {
                     runQueue.push(task);
                 }
-                break;
+                setTimeout(run, 0);
+                return;
             }
         }
     }
@@ -107,6 +114,10 @@ function tick(task: Task): boolean {
         case "exit":
             task.running = false;
             return false;
+        case "yield":
+            return false;
+        default:
+            throw new Error("unknown opcode: " + ins.op);
     }
     return true;
 }
