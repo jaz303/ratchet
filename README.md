@@ -10,7 +10,7 @@ Current status: evolving a toy TypeScript interpreter
 
 ## TODO
 
-  - [ ] yield
+  - [x] yield
   - [ ] `task.running` -> `task.state` (runnable, paused, exited)
   - [ ] implement "return" op
   - [ ] test case with builtins to perform basic arithmetic
