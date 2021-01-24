@@ -16,3 +16,16 @@ Current status: evolving a toy TypeScript interpreter
   - [ ] test case with builtins to perform basic arithmetic
   - [ ] proper function lookup
   - [ ] argument passing to spawned tasks
+
+## High-level features
+
+Need to think about these sooner rather than later:
+
+  - blocks
+  - closures
+  - method calls
+  - class construction
+  - arrays, slices. including typed arrays
+  - tuples
+  - pattern matching
+
